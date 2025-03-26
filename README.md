@@ -1,48 +1,71 @@
 # Benitez y Asociados
 
-```sh
-npm create astro@latest -- --template basics
-```
+A modern website for **Benitez y Asociados**, built using Astro and Tailwind CSS.
 
-[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/withastro/astro/tree/latest/examples/basics)
-[![Open with CodeSandbox](https://assets.codesandbox.io/github/button-edit-lime.svg)](https://codesandbox.io/p/sandbox/github/withastro/astro/tree/latest/examples/basics)
-[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/withastro/astro?devcontainer_path=.devcontainer/basics/devcontainer.json)
+## 🚀 Technologies Used
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+- [Astro](https://astro.build/) - Modern Static Site Generator
+- [Tailwind CSS](https://tailwindcss.com/) - Utility-first CSS Framework
 
-![just-the-basics](https://github.com/withastro/astro/assets/2244813/a0a5533c-a856-4198-8470-2d67b1d7c554)
+## 📂 Project Structure
 
-## 🚀 Project Structure
-
-Inside of your Astro project, you'll see the following folders and files:
-
-```text
+```bash
 /
-├── public/
-│   └── favicon.svg
+├── public/         # Static assets
 ├── src/
-│   ├── layouts/
-│   │   └── Layout.astro
-│   └── pages/
-│       └── index.astro
-└── package.json
+│   ├── components/ # Reusable UI components
+│   ├── layouts/    # Page layouts
+│   ├── pages/      # Individual pages
+│   ├── styles/     # Global styles
+│   └── utils/      # Utility functions
+├── astro.config.mjs # Astro configuration
+├── package.json    # Project dependencies
+└── tailwind.config.js # Tailwind CSS configuration
 ```
 
-To learn more about the folder structure of an Astro project, refer to [our guide on project structure](https://docs.astro.build/en/basics/project-structure/).
+## 📦 Installation
 
-## 🧞 Commands
+Clone the repository and install dependencies:
 
-All commands are run from the root of the project, from a terminal:
+```bash
+git clone https://github.com/your-username/benitez-y-asociados.git
+cd benitez-y-asociados
+npm install
+```
 
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
+## 🔧 Development
 
-## 👀 Want to learn more?
+Run the development server:
 
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+```bash
+npm run dev
+```
+
+Open [http://localhost:4321](http://localhost:4321) (or the port displayed in the terminal) to view the project.
+
+## 🚀 Deployment
+
+The site is hosted at: [https://benitezyasoc.mateando.com/](https://benitezyasoc.mateando.com/)
+
+To deploy, use the following command:
+
+```bash
+npm run build && npm run deploy
+```
+
+## 🛠️ Building for Production
+
+Generate a production build:
+
+```bash
+npm run build
+```
+
+## 📜 License
+
+This project is licensed under the [MIT License](LICENSE).
+
+---
+
+For any inquiries or support, contact **Benitez y Asociados** via their official website.
+
