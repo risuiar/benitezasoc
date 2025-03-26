@@ -1,4 +1,4 @@
-# Astro Starter Kit: Basics
+# Benitez y Asociados
 
 ```sh
 npm create astro@latest -- --template basics
