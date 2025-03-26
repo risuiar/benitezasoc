@@ -1,0 +1,31 @@
+---
+ import '../styles/global.css'
+ import Footer from '../components/Footer.astro'
+---
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width" />
+		<link rel="icon" type="image/ico+xml" href="/favicon.ico" />
+		<meta name="generator" content={Astro.generator} />
+		<title>Benitez y asociados</title>
+	</head>
+	<body>
+		<div class="mx-auto max-w-5xl">
+			<slot />
+			<Footer />
+		</div>
+	</body>
+</html>
+
+<style is:global>
+	html,
+	body {
+		margin: 0;
+		width: 100%;
+		height: 100%;
+		background-color: #F0F1F5;
+	}
+</style>

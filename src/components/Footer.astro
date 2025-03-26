@@ -1,0 +1,36 @@
+---
+import { Image } from 'astro:assets'
+import whatsapp from '../assets/whatsapp.svg'
+import instagram from '../assets/instagram.svg'
+---
+
+<footer class="bg-neutral-800 text-gray-200 p-10">
+    <div class="pb-5">ADRIÁN BENITEZ Y ASOCIADOS</div>
+    <div class="w-full md:flex md:flex-rows md:justify-between">
+        <div>
+            <h1 class="text-2xl">Donde nos encontrás</h1>
+            <div>
+                <p class="text-base">Calle Salta 2278, 1ro A.</p>
+                <p><a href="https://www.instagram.com/benitezyasoc/" target="_blank" class="flex" rel="noopener noreferrer">benitezyasoc <Image src={instagram} format="svg" alt="contacto" class="ml-2" /></a></p>
+            </div>
+        </div>
+        <div class="pt-4 md:pt-0">
+            <h1 class="text-2xl">Datos de contacto</h1>
+            <div>
+                <p><a href="https://wa.me/+5493765335155" target="_blank" class="flex" rel="noopener noreferrer">+54 9 376 533-5155 <Image src={whatsapp} format="svg" alt="contacto" class="ml-2" /></a></p>
+                <p>
+                    <a href="mailto:benitezasoc@gmail.com" target="_blank">
+                        benitezasoc@gmail.com
+                    </a>
+                </p>
+            </div>
+        </div>
+        <div class="pt-4 md:pt-0">
+            <h1 class="text-2xl">
+                Horario de oficina
+            </h1>
+            <p>Lunes a viernes de 7:30 a 12:30</p>
+            <p>Sabados de 15:00 a 20:00</p>
+        </div>
+    </div>
+</footer>

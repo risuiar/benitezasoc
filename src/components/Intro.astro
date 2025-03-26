@@ -1,0 +1,11 @@
+---
+import { getImage } from 'astro:assets'
+import HomeBg from '../assets/homebg.jpg';
+const bgImage = await getImage({ src: HomeBg })
+---
+
+<div class="w-full h-90 md:h-150 pt-10 md:pt-15" style={`background-image: url(${bgImage.src}); background-size: cover; background-repeat: no-repeat;`}>
+    <h2 class="pl-10 pb-10 md:pb-20 md:text-2xl text-xl">Adrian Benitez y asociados</h2>
+    <h1 class="text-3xl md:text-5xl md:pl-20 pl-15 pb-10 md:pb-20"><p>Resolviendo tus </p>problemas de frente</h1>
+    <p class="md:pl-30 pl-10 max-w-xl prose lg:prose-xl text-white">Brindamos atención legal directa y especializada para que puedas resolver tus asuntos de manera rapida y eficiente.</p>
+</div>

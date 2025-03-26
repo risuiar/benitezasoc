@@ -1,0 +1,22 @@
+---
+import '@fontsource/cormorant-garamond/600.css';
+import Intro from './Intro.astro';
+import Intro2 from './Intro2.astro';
+import Specializations from './Specializations.astro';
+import Services from './Services.astro';
+import Team from './Team.astro';
+---
+
+<div id="container" class="text-white">
+    <Intro />
+    <Intro2 />
+    <Specializations />
+    <Services />
+    <Team />
+</div>
+
+<style is:global>
+	h1 {
+		font-family: "Cormorant Garamond", serif, sans-serif;
+	}
+</style>
