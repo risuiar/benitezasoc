@@ -12,15 +12,17 @@ A modern website for **Benitez y Asociados**, built using Astro and Tailwind CSS
 ```bash
 /
 ├── public/         # Static assets
+│   └── images/
+│           └── team/
 ├── src/
+│   ├── assets/    # Page assets
 │   ├── components/ # Reusable UI components
-│   ├── layouts/    # Page layouts
 │   ├── pages/      # Individual pages
-│   ├── styles/     # Global styles
-│   └── utils/      # Utility functions
+│   └── styles/     # Global styles
 ├── astro.config.mjs # Astro configuration
 ├── package.json    # Project dependencies
-└── tailwind.config.js # Tailwind CSS configuration
+├── tailwind.config.js # Tailwind CSS configuration
+└── tsconfig.json # Typescript configuration
 ```
 
 ## 📦 Installation
@@ -68,4 +70,3 @@ This project is licensed under the [MIT License](LICENSE).
 ---
 
 For any inquiries or support, contact **Benitez y Asociados** via their official website.
-
