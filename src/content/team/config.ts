@@ -7,6 +7,7 @@ const team = defineCollection({
         cuit: z.string(),
         img: z.string(),
         contact: z.string(),
+        sort: z.number(),
     }),
 })
 

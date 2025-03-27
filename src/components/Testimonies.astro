@@ -1,0 +1,19 @@
+---
+import { Image } from 'astro:assets'
+import { TestomoniesData } from './TestimoniesData.astro'
+import type { Testimony } from './TestimoniesData.astro'
+import quote from '../assets/quote.svg'
+---
+<section class="bg-stone-300 text-black md:p-4">
+    <h1 class="text-3xl text-center">Testimonios de clientes</h1>
+    <h1 class="text-2xl text-center pb-4">Una mirada honesta sobre cómo trabajamos</h1>
+    <ul class="w-full md:flex justify-items-center lg:w-5/6 mx-auto pb-4">
+        {TestomoniesData.map((Testimony) => (
+            <li class="bg-white rounded-sm p-4 m-2">
+                <Image src={quote} format="svg" alt="quote" class="w-6 h-6 mx-auto" />
+                <p class="text-center">{Testimony.text}</p>
+                <p class="text-center pt-4 text-xl">{Testimony.name}</p>
+            </li>
+        ))}
+    </ul>
+</section>

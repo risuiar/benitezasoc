@@ -15,7 +15,7 @@ interface TeamMember {
 const team = await getCollection('team') as { data: TeamMember }[];
 team.sort((a, b) => a.data.sort - b.data.sort);
 ---
-<section class="bg-stone-300 text-black p-4">
+<section class="bg-stone-300 text-black md:p-4">
     <h1 class="text-4xl pl-4">Nuestro Equipo</h1>
     <div>
         {team.map(({data: {
@@ -25,14 +25,14 @@ team.sort((a, b) => a.data.sort - b.data.sort);
             text,
             contact,
         }}) => (
-            <div class="mb-4 p-4 flex gap-4">
+            <div class="p-4 flex gap-4">
                 <div class="w-1/5">
                     <h1 class="text-nowrap text-2xl">{title}</h1>
                     <img src={`/images/team/${img}`} alt={title} class="rounded" />
                 </div>
                 <div class="w-4/5 pt-6">
                     <p class="pb-2 pt-2">{license}</p>
-                    <p class="pb-2 text-sm md:text-base text-justify">{text}</p>
+                    <p class="pb-2 text-sm md:text-lg text-justify"><span>{text}</span></p>
                     <a href={`https://wa.me/+549${contact}`} target="_blank" class="flex text-blue-950" rel="noopener noreferrer">{contact} <Image src={whatsapp} format="svg" alt="contacto" class="ml-2" /></a>
                 </div>
             </div>

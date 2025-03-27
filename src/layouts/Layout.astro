@@ -1,16 +1,31 @@
 ---
  import '../styles/global.css'
  import Footer from '../components/Footer.astro'
+ declare global {
+    interface Window {
+        dataLayer:any;
+    }
+}
 ---
 
 <!doctype html>
 <html lang="en">
 	<head>
+		<!-- Google tag (gtag.js) -->
+		<script async src="https://www.googletagmanager.com/gtag/js?id=G-9X3WBGWZRV"></script>
+		<script>
+		window.dataLayer = window.dataLayer || [];
+		function gtag(...args: any[]){window.dataLayer.push(args);}
+		gtag('js', new Date());
+
+		gtag('config', 'G-9X3WBGWZRV');
+		</script>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width" />
 		<link rel="icon" type="image/ico+xml" href="/favicon.ico" />
 		<meta name="generator" content={Astro.generator} />
-		<title>Benitez y asociados</title>
+		<title>Adrián Benítez y Asociados - Abogados Especializados</title>
+		<meta name="description" content="En Adrián Benítez y Asociados ofrecemos atención legal especializada en derecho civil, penal, laboral y daños y perjuicios. Con más de 25 años de experiencia, trabajamos para resolver tus problemas legales de manera eficaz y directa.">
 	</head>
 	<body>
 		<div class="mx-auto max-w-5xl">

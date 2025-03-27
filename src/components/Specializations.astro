@@ -1,22 +1,26 @@
-<div class="w-full pt-10 md:flex text-black justify-items-center bg-neutral-800 p-4">
+---
+import { Image } from 'astro:assets'
+import logo from '../assets/logo.jpg'
+---
+<div class="w-full pt-10 md:flex text-black justify-items-center bg-neutral-800 pb-2 md:p-4">
     <h1 class="text-white text-3xl self-center text-nowrap">En qué <br class="hidden md:block" />nos especializamos</h1>
     <div class="w-ful md:grid md:grid-cols-2 md:grid-rows-2">
-        <div class="text-white bg-blue-800 p-4 rounded m-4">
+        <div class="text-white bg-blue-800 p-4 rounded m-2">
             <h1 class="text-2xl pb-2 text-center">Daños y perjuicios</h1>
-            <p class="text-sm text-justify">Cuando sufres un daño, no solo te enfrentarás a una pérdida, sino también a una incertidumbre. En nuestro estudio, convertimos esa incertidumbre en soluciones concretas. Con más de 25 años de experiencia  en Daños y Perjuicios , nos especializamos en reclamar y obtener la compensación justa que te corresponde.</p>
+<span>Cuando sufres un daño, no solo te enfrentarás a una pérdida, sino también a una incertidumbre. En nuestro estudio, convertimos esa incertidumbre en soluciones concretas. Con más de 25 años de experiencia  en Daños y Perjuicios , nos especializamos en reclamar y obtener la compensación justa que te corresponde.</span></p>
         </div>
-        <div class="bg-gray-100 p-4 rounded m-4">
+        <div class="bg-gray-100 p-4 rounded m-2">
             <h1 class="text-2xl pb-2 text-center">Derecho laboral</h1>
-            <p class="text-sm text-justify">En el mundo laboral, los derechos no siempre se respetan. Si sufre despidos injustificados, falta de pago, acoso laboral o cualquier otra vulneración , merecés una defensa sólida y efectiva.
-                Nos especializamos en asesorar y representar a trabajadores que buscan justicia y la compensación que les corresponde.</p>
+<span>En el mundo laboral, los derechos no siempre se respetan. Si sufre despidos injustificados, falta de pago, acoso laboral o cualquier otra vulneración , merecés una defensa sólida y efectiva.
+                Nos especializamos en asesorar y representar a trabajadores que buscan justicia y la compensación que les corresponde.</span></p>
         </div>
-        <div class="bg-gray-100 p-4 rounded m-4">
+        <div class="bg-gray-100 p-4 rounded m-2">
             <h1 class="text-2xl pb-2 text-center">Derecho penal</h1>
-            <p class="text-sm text-justify">Enfrentar una causa penal puede ser una de las situaciones más difíciles en la vida de una persona. Una acusación injusta o un error en el proceso pueden cambiarlo todo. No estás solo.
-                Nos especializamos en brindar una defensa estratégica, contundente y efectiva para proteger tu libertad y garantizar el debido proceso.</p>
+<span>Enfrentar una causa penal puede ser una de las situaciones más difíciles en la vida de una persona. Una acusación injusta o un error en el proceso pueden cambiarlo todo. No estás solo.
+                Nos especializamos en brindar una defensa estratégica, contundente y efectiva para proteger tu libertad y garantizar el debido proceso.</span></p>
         </div>
-        <div class="bg-gray-100 p-4 rounded m-4">
-            <p></p>
+        <div class="bg-white p-4 rounded m-2 justify-center content-center">
+            <Image src={logo} format="jpg" alt="Adrián Benitez y asociados" class="fit align-middle max-w-48 mx-auto" />
         </div>
     </div>
 </div>
