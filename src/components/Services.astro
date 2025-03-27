@@ -1,12 +1,6 @@
----
-import { getImage } from 'astro:assets'
-import sign from '../assets/sign.jpg'
-const signImg = await getImage({ src: sign })
----
-
 <div class="bg-white">
     <div class="text-black px-4 pt-4 pb-8 w-full md:w-5/6 mx-auto">
-        <div class="h-40 md:mb-4 md:mt-4 self-center justify-center" style={`background-image: url(${signImg.src}); background-size: contain; background-repeat: no-repeat; background-position: center;`}></div>
+        <div class=`h-40 md:mb-4 md:mt-4 self-center justify-center bg-center bg-contain bg-no-repeat bg-[url('/images/sign.jpg')]`></div>
         <h1 class="text-3xl pb-4">Nuestros servicios principales</h1>
         <ul class="list-disc list-inside">
             <li>Derecho Civil – Reclamos por daños y perjuicios, incumplimientos contractuales, conflictos de propiedad, sucesiones y más. </li>
