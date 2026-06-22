@@ -1,26 +1,7 @@
 ---
-import { Image } from 'astro:assets'
-import logo from '../assets/logo.jpg'
+const areas=[['Daños y perjuicios','Reclamamos la reparación justa frente a accidentes, incumplimientos y otros daños.'],['Derecho laboral','Defendemos a trabajadores ante despidos, diferencias salariales y vulneración de derechos.'],['Derecho penal','Brindamos una defensa firme y estratégica, con respeto por las garantías del debido proceso.'],['Derecho civil','Intervenimos en contratos, sucesiones, conflictos patrimoniales y reclamos entre particulares.'],['Derecho de familia','Acompañamos divorcios, alimentos, cuidado personal y otros procesos familiares sensibles.'],['Derecho comercial','Asesoramos a empresas en contratos, cobros, concursos y litigios comerciales.']]
 ---
-<div class="w-full pt-10 md:flex text-black justify-items-center bg-neutral-800 pb-2 md:p-4">
-    <h1 class="text-white text-3xl self-center text-nowrap">En qué <br class="hidden md:block" />nos especializamos</h1>
-    <div class="w-ful md:grid md:grid-cols-2 md:grid-rows-2">
-        <div class="text-white bg-blue-800 p-4 rounded m-2">
-            <h1 class="text-2xl pb-2 text-center">Daños y perjuicios</h1>
-<span>Cuando sufres un daño, no solo te enfrentarás a una pérdida, sino también a una incertidumbre. En nuestro estudio, convertimos esa incertidumbre en soluciones concretas. Con más de 25 años de experiencia  en Daños y Perjuicios , nos especializamos en reclamar y obtener la compensación justa que te corresponde.</span></p>
-        </div>
-        <div class="bg-gray-100 p-4 rounded m-2">
-            <h1 class="text-2xl pb-2 text-center">Derecho laboral</h1>
-<span>En el mundo laboral, los derechos no siempre se respetan. Si sufre despidos injustificados, falta de pago, acoso laboral o cualquier otra vulneración , merecés una defensa sólida y efectiva.
-                Nos especializamos en asesorar y representar a trabajadores que buscan justicia y la compensación que les corresponde.</span></p>
-        </div>
-        <div class="bg-gray-100 p-4 rounded m-2">
-            <h1 class="text-2xl pb-2 text-center">Derecho penal</h1>
-<span>Enfrentar una causa penal puede ser una de las situaciones más difíciles en la vida de una persona. Una acusación injusta o un error en el proceso pueden cambiarlo todo. No estás solo.
-                Nos especializamos en brindar una defensa estratégica, contundente y efectiva para proteger tu libertad y garantizar el debido proceso.</span></p>
-        </div>
-        <div class="bg-white p-4 rounded m-2 justify-center content-center">
-            <Image src={logo} format="jpg" alt="Adrián Benitez y asociados" class="fit align-middle max-w-48 mx-auto" />
-        </div>
-    </div>
-</div>
+<section id="servicios" class="areas"><div class="container"><header class="section-head"><div><p class="eyebrow">Áreas de práctica</p><h2 class="section-title">En qué nos especializamos</h2></div><p class="section-copy">Abordamos cada asunto con análisis riguroso, comunicación directa y una estrategia diseñada para cada cliente.</p></header><div class="areas-grid">{areas.map(([title,text],i)=><article class="area-card"><span class="area-number">0{i+1}</span><svg aria-hidden="true" viewBox="0 0 24 24"><path d="M12 3v18M5 7h14M7 7l-4 7h8L7 7Zm10 0-4 7h8l-4-7ZM8 21h8"/></svg><h3>{title}</h3><p>{text}</p><a href="#contacto" aria-label={`Consultar por ${title}`}>Consultar <span aria-hidden="true">↗</span></a></article>)}</div></div></section>
+<style>
+.areas{padding:clamp(6rem,10vw,9rem) 0;background:#f6f4ef}.section-head{display:grid;grid-template-columns:1.1fr .7fr;align-items:end;gap:3.5rem;margin-bottom:3.8rem}.section-head .section-copy{margin:0}.areas-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.15rem;align-items:stretch}.area-card{position:relative;min-height:325px;padding:2.35rem 2.25rem;background:#fff;border:1px solid #e5e1d9;border-radius:12px;box-shadow:0 3px 12px rgba(26,46,42,.025);transition:transform .3s ease,border-color .3s ease,box-shadow .3s ease}.area-card:before{content:"";position:absolute;left:2.25rem;top:0;width:48px;height:3px;border-radius:0 0 3px 3px;background:#c4a06f}.area-card:hover{z-index:1;transform:translateY(-5px);border-color:#d9c9b3;box-shadow:var(--soft-shadow)}.area-number{position:absolute;right:1.6rem;top:1.5rem;color:#a7aaa4;font-size:.7rem;letter-spacing:.14em}.area-card svg{width:38px;height:38px;margin:1rem 0 2rem;fill:none;stroke:#b58a51;stroke-width:1.15;stroke-linecap:round;stroke-linejoin:round}.area-card h3{margin:0;font-size:1.85rem;line-height:1.1}.area-card p{min-height:76px;margin:1.1rem 0 1.2rem;color:#68716f;font-size:.92rem;line-height:1.7}.area-card a{display:inline-flex;gap:.5rem;color:#123c3b;font-size:.76rem;font-weight:750;text-transform:uppercase;letter-spacing:.09em}@media(max-width:900px){.areas-grid{grid-template-columns:repeat(2,1fr)}}@media(max-width:650px){.section-head{grid-template-columns:1fr;gap:1.4rem;margin-bottom:2.8rem}.areas-grid{grid-template-columns:1fr}.area-card{min-height:285px}}
+</style>

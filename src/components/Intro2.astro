@@ -1,16 +1,8 @@
 ---
-import { getImage } from 'astro:assets'
 import { Image } from 'astro:assets'
 import Justice from '../assets/justice.jpg'
-const JusticeImage = await getImage({ src: Justice })
 ---
-
-<div class="w-full pt-10 md:flex text-black bg-white justify-items-center pb-10">
-    <div class="w-full md:w-2/3 p-2 md:p-10">
-        <h1 class="text-3xl mb-2 md:mb-10 text-center">Sabemos que enfrentar un juicio puede ser desafiante.</h1>
-        <p class="prose lg:prose-xl text-justify"><span>Por eso, trabajamos de cerca con nuestros clientes en cada etapa del proceso, guiándolos con compromiso y claridad para que alcancen sus objetivos. Con más de 25 años de experiencia en litigios complejos, ofrecemos un enfoque directo, estratégico y diligente para proteger tus intereses.</span></p>
-    </div>
-    <div class="w-full md:w-1/3 p-4 max-w-80 h-100">
-        <div class="w-full h-full rounded" style={`background-image: url(${JusticeImage.src}); background-size: cover; background-repeat: no-repeat;`}></div>
-    </div>
-</div>
+<section class="intro-section"><div class="container intro-grid"><div class="intro-copy"><p class="eyebrow">Experiencia que acompaña</p><h2 class="section-title">Sabemos que enfrentar un juicio puede ser desafiante</h2><p class="section-copy">Por eso, trabajamos de cerca con nuestros clientes en cada etapa del proceso, guiándolos con compromiso y claridad para que alcancen sus objetivos.</p><p class="section-copy">Con más de 25 años de experiencia en litigios complejos, ofrecemos un enfoque directo, estratégico y diligente para proteger sus intereses.</p><a class="text-link" href="#equipo">Conocé al equipo <span aria-hidden="true">→</span></a></div><div class="intro-image"><Image src={Justice} alt="Balanza de la justicia, símbolo de equidad y derecho" widths={[360,560,800]} sizes="(max-width:800px) 100vw,42vw" loading="lazy"/><div class="image-note"><strong>Desde 1999</strong><span>Defendiendo los intereses de nuestros clientes.</span></div></div></div></section>
+<style>
+.intro-section{padding:clamp(6rem,11vw,9.5rem) 0;background:#fff}.intro-grid{display:grid;grid-template-columns:1.05fr .85fr;align-items:center;gap:clamp(3.5rem,9vw,8rem)}.intro-copy{max-width:600px}.intro-copy .section-copy{margin:1.8rem 0 0}.intro-copy .section-copy+.section-copy{margin-top:1rem}.text-link{display:inline-flex;gap:.7rem;margin-top:1.9rem;padding-bottom:.35rem;border-bottom:1px solid #b58a51;color:#123c3b;font-size:.86rem;font-weight:750}.intro-image{position:relative;padding:0 0 3rem 3rem}.intro-image:before{content:"";position:absolute;inset:3.4rem 2rem 0 0;border:1px solid #cbb894;border-radius:12px}.intro-image :global(img){position:relative;z-index:1;width:100%;height:540px;object-fit:cover;border-radius:12px;filter:saturate(.62) contrast(1.04) sepia(.04);box-shadow:var(--soft-shadow)}.image-note{position:absolute;z-index:2;right:-.5rem;bottom:0;width:245px;padding:1.35rem 1.5rem;color:#fff;background:#123c3b;border-radius:9px 0 9px 9px;box-shadow:0 10px 30px #123c3b30}.image-note strong{display:block;margin-bottom:.3rem;color:#d4aa72;font:600 1.55rem "Cormorant Garamond",serif}.image-note span{font-size:.75rem;line-height:1.55}@media(max-width:800px){.intro-grid{grid-template-columns:1fr}.intro-image{padding:0 0 2.5rem 1rem}.intro-image :global(img){height:420px}.image-note{right:0}}
+</style>

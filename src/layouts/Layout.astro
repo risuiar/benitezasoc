@@ -1,45 +1,7 @@
 ---
- import '../styles/global.css'
- import Footer from '../components/Footer.astro'
- declare global {
-    interface Window {
-        dataLayer:any;
-    }
-}
+import '../styles/global.css'
+import Header from '../components/Header.astro'
+import Footer from '../components/Footer.astro'
 ---
 <!doctype html>
-<html lang="es">
-	<head>
-		<!-- Google tag (gtag.js) -->
-		<script async src="https://www.googletagmanager.com/gtag/js?id=G-9X3WBGWZRV"></script>
-		<script>
-		window.dataLayer = window.dataLayer || [];
-		function gtag(...args: any[]){window.dataLayer.push(args);}
-		gtag('js', new Date());
-
-		gtag('config', 'G-9X3WBGWZRV');
-		</script>
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/ico+xml" href="/favicon.ico" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Adrián Benítez y Asociados - Abogados Especializados</title>
-		<meta name="description" content="En Adrián Benítez y Asociados ofrecemos atención legal especializada en derecho civil, penal, laboral y daños y perjuicios. Con más de 25 años de experiencia, trabajamos para resolver tus problemas legales de manera eficaz y directa.">
-	</head>
-	<body>
-		<div class="mx-auto max-w-5xl">
-			<slot />
-			<Footer />
-		</div>
-	</body>
-</html>
-
-<style is:global>
-	html,
-	body {
-		margin: 0;
-		width: 100%;
-		height: 100%;
-		background-color: #F0F1F5;
-	}
-</style>
+<html lang="es"><head><meta charset="UTF-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/><meta name="theme-color" content="#123c3b"/><link rel="icon" type="image/svg+xml" href="/favicon.svg"/><link rel="alternate icon" href="/favicon.ico"/><meta name="generator" content={Astro.generator}/><title>Adrián Benítez & Asociados | Estudio jurídico</title><meta name="description" content="Asesoramiento y representación legal en Posadas, Misiones. Más de 25 años de experiencia en derecho civil, laboral, penal, familiar y comercial."/></head><body><Header/><main><slot/></main><Footer/></body></html>

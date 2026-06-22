@@ -1,19 +1,8 @@
 ---
-import { Image } from 'astro:assets'
-import { TestomoniesData } from './TestimoniesData.astro'
-import type { Testimony } from './TestimoniesData.astro'
-import quote from '../assets/quote.svg'
+const testimonials=[{text:'Desde el primer día me explicaron cada paso con claridad. Sentí que mi caso estaba en manos de profesionales responsables y comprometidos.',name:'Hugo Martínez',case:'Consulta laboral'},{text:'En un momento muy difícil encontré una defensa firme y, sobre todo, un trato humano. El acompañamiento fue constante durante todo el proceso.',name:'Ricardo Vogeli',case:'Defensa penal'},{text:'Se ocuparon de mi reclamo y me mantuvieron informada. Logramos una solución justa con un trabajo serio y transparente.',name:'Roxana Villalba',case:'Daños y perjuicios'}]
 ---
-<section class="bg-stone-300 text-black md:p-4">
-    <h1 class="text-3xl text-center">Testimonios de clientes</h1>
-    <h1 class="text-2xl text-center pb-4">Una mirada honesta sobre cómo trabajamos</h1>
-    <ul class="w-full md:flex justify-items-center lg:w-5/6 mx-auto pb-4">
-        {TestomoniesData.map((Testimony) => (
-            <li class="bg-white rounded-sm p-4 m-2">
-                <Image src={quote} format="svg" alt="quote" class="w-6 h-6 mx-auto" />
-                <p class="text-center">{Testimony.text}</p>
-                <p class="text-center pt-4 text-xl">{Testimony.name}</p>
-            </li>
-        ))}
-    </ul>
-</section>
+<section id="testimonios" class="testimonials"><div class="container"><header><p class="eyebrow">Confianza construida</p><h2 class="section-title">Testimonios de clientes</h2><p class="section-copy">La experiencia de quienes ya trabajaron con nosotros.</p></header><div class="quotes">{testimonials.map(item=><figure><span class="quote" aria-hidden="true">“</span><blockquote>{item.text}</blockquote><figcaption><strong>{item.name}</strong><span>{item.case}</span></figcaption></figure>)}</div></div></section>
+<section id="contacto" class="cta"><div class="container cta-inner"><div><p class="eyebrow">Hablemos de tu caso</p><h2>¿Necesitás asesoramiento legal?</h2><p>Contanos tu situación y recibí una orientación inicial clara sobre los próximos pasos.</p></div><div class="cta-actions"><a class="btn btn-primary" href="https://wa.me/5493765051100?text=Hola%2C%20quisiera%20recibir%20orientaci%C3%B3n%20sobre%20mi%20situaci%C3%B3n%20legal" target="_blank" rel="noopener noreferrer">Contactar por WhatsApp <span aria-hidden="true">→</span></a><a class="btn btn-outline" href="mailto:benitezasoc@gmail.com">Enviar email</a></div></div></section>
+<style>
+.testimonials{padding:clamp(6rem,10vw,9rem) 0;background:#fff}.testimonials header{text-align:center}.testimonials header .eyebrow:before{display:none}.testimonials .section-copy{margin:1.2rem 0 0}.quotes{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;margin-top:3.8rem;align-items:stretch}.quotes figure{position:relative;margin:0;padding:2.4rem 2.2rem 2.1rem;border:1px solid #e4e0d8;border-radius:14px 14px 14px 4px;background:#faf9f6;box-shadow:0 4px 16px rgba(26,46,42,.025)}.quote{position:absolute;right:1.8rem;top:1.45rem;color:#d7c09f;font:600 4.2rem/.7 "Cormorant Garamond",serif;opacity:.65}.quotes blockquote{min-height:135px;margin:.8rem 0 2.2rem;color:#3e4846;font:600 1.3rem/1.5 "Cormorant Garamond",serif}.quotes figcaption{padding-top:1.15rem;border-top:1px solid #e2ded6}.quotes strong,.quotes figcaption span{display:block}.quotes strong{font-size:.83rem}.quotes figcaption span{margin-top:.3rem;color:#8a908e;font-size:.72rem}.cta{padding:clamp(5rem,9vw,7.5rem) 0;color:#fff;background:linear-gradient(110deg,#0b2928,#164845)}.cta-inner{display:flex;align-items:center;justify-content:space-between;gap:clamp(3rem,7vw,6rem)}.cta h2{margin:0;font-size:clamp(2.7rem,5vw,4.5rem);line-height:1;text-wrap:balance}.cta p:not(.eyebrow){max-width:610px;margin:1.25rem 0 0;color:#d2dbd8;line-height:1.75}.cta-actions{display:flex;flex:0 0 auto;flex-wrap:wrap;gap:.9rem}@media(max-width:850px){.quotes{grid-template-columns:1fr}.quotes blockquote{min-height:0}.cta-inner{display:block}.cta-actions{margin-top:2.2rem}.cta-actions .btn{flex:1 1 200px}}
+</style>

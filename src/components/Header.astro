@@ -1,26 +1,5 @@
-<nav class="border-gray-200 dark:bg-gray-900 absolute">
-    <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-2">
-      <button data-collapse-toggle="navbar-default" type="button" class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600" aria-controls="navbar-default" aria-expanded="false">
-          <span class="sr-only">Open main menu</span>
-          <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 17 14">
-              <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 1h15M1 7h15M1 13h15"/>
-          </svg>
-      </button>
-      <div class="hidden w-full md:block md:w-auto" id="navbar-default">
-        <ul class="font-medium flex flex-col p-4 md:p-0 mt-4 border border-gray-100 rounded-lg bg-gray-50 md:flex-row md:space-x-8 rtl:space-x-reverse md:mt-0 md:border-0 md:bg-white dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700 left-14 min-w-[180px]">
-          <li>
-            <a href="/" class="block py-2 px-3 text-white bg-blue-700 rounded-sm md:bg-transparent md:text-blue-700 md:p-0 dark:text-white md:dark:text-blue-400" aria-current="page">Home</a>
-          </li>
-          <li>
-            <a href="#" class="block py-2 px-3 text-gray-900 rounded-sm hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">Acerca de nosotros</a>
-          </li>
-          <li>
-            <a href="#" class="block py-2 px-3 text-gray-900 rounded-sm hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">Servicios</a>
-          </li>
-          <li>
-            <a href="#" class="block py-2 px-3 text-gray-900 rounded-sm hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">Contacto</a>
-          </li>
-        </ul>
-      </div>
-    </div>
-  </nav>
+<header class="site-header"><div class="container header-inner"><a href="#inicio" class="brand" aria-label="Adrián Benítez y Asociados, inicio"><span class="brand-mark" aria-hidden="true">AB</span><span class="brand-name">Adrián Benítez <small>& Asociados</small></span></a><button class="menu-toggle" type="button" aria-expanded="false" aria-controls="main-nav" aria-label="Abrir menú"><span></span><span></span><span></span></button><nav id="main-nav" class="main-nav" aria-label="Navegación principal"><a href="#inicio">Inicio</a><a href="#servicios">Servicios</a><a href="#equipo">Equipo</a><a href="#testimonios">Testimonios</a><a href="#contacto">Contacto</a><a class="header-cta" href="https://wa.me/5493765051100?text=Hola%2C%20quisiera%20realizar%20una%20consulta%20legal" target="_blank" rel="noopener noreferrer">Consulta por WhatsApp</a></nav></div></header>
+<script>const b=document.querySelector<HTMLButtonElement>('.menu-toggle');const n=document.querySelector<HTMLElement>('#main-nav');const close=()=>{b?.setAttribute('aria-expanded','false');b?.setAttribute('aria-label','Abrir menú');n?.classList.remove('is-open')};b?.addEventListener('click',()=>{const o=b.getAttribute('aria-expanded')==='true';b.setAttribute('aria-expanded',String(!o));b.setAttribute('aria-label',o?'Abrir menú':'Cerrar menú');n?.classList.toggle('is-open',!o)});n?.querySelectorAll('a').forEach(a=>a.addEventListener('click',close))</script>
+<style>
+.site-header{position:absolute;z-index:20;top:0;left:0;width:100%;color:#fff;border-bottom:1px solid #ffffff29}.header-inner{min-height:88px;display:flex;align-items:center;justify-content:space-between;gap:2rem}.brand{display:inline-flex;align-items:center;gap:.8rem;line-height:1}.brand-mark{width:42px;height:42px;display:grid;place-items:center;border:1px solid #c7a16e;border-radius:5px;color:#d4aa72;font:600 1.15rem "Cormorant Garamond",serif}.brand-name{font:600 1.25rem "Cormorant Garamond",serif}.brand-name small{display:block;margin-top:.25rem;color:#d9c5a8;font:600 .65rem/1 sans-serif;letter-spacing:.19em;text-transform:uppercase}.main-nav{display:flex;align-items:center;gap:1.65rem;font-size:.82rem;font-weight:650}.main-nav>a:not(.header-cta){padding-block:.7rem;border-bottom:1px solid transparent}.main-nav>a:not(.header-cta):hover{border-color:#d4aa72}.header-cta{padding:.8rem 1.1rem;border:1px solid #ffffff66;border-radius:7px;background:#ffffff08;transition:.25s}.header-cta:hover{background:#fff;color:#123c3b}.menu-toggle{display:none;width:44px;height:44px;border:1px solid #ffffff73;border-radius:7px;background:transparent;padding:11px}.menu-toggle span{display:block;height:1px;margin:5px 0;background:#fff}@media(max-width:960px){.header-inner{min-height:76px}.menu-toggle{display:block}.main-nav{position:absolute;top:76px;left:14px;width:calc(100% - 28px);display:none;align-items:stretch;gap:0;padding:1rem 20px 1.5rem;background:#0b2928;border:1px solid #ffffff24;border-radius:0 0 12px 12px;box-shadow:0 18px 35px #0003}.main-nav.is-open{display:grid}.main-nav a{padding:.9rem .2rem}.header-cta{margin-top:.5rem;text-align:center}}
+</style>
