@@ -4,4 +4,32 @@ import Header from '../components/Header.astro'
 import Footer from '../components/Footer.astro'
 ---
 <!doctype html>
-<html lang="es"><head><meta charset="UTF-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/><meta name="theme-color" content="#123c3b"/><link rel="icon" type="image/svg+xml" href="/favicon.svg"/><link rel="alternate icon" href="/favicon.ico"/><meta name="generator" content={Astro.generator}/><title>Adrián Benítez & Asociados | Estudio jurídico</title><meta name="description" content="Asesoramiento y representación legal en Posadas, Misiones. Más de 25 años de experiencia en derecho civil, laboral, penal, familiar y comercial."/></head><body><Header/><main><slot/></main><Footer/></body></html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#123c3b" />
+    <link
+      rel="preload"
+      href="/fonts/cormorant-garamond-latin-600-normal.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
+    />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="alternate icon" href="/favicon.ico" />
+    <meta name="generator" content={Astro.generator} />
+    <title>Adrián Benítez & Asociados | Estudio jurídico</title>
+    <meta
+      name="description"
+      content="Asesoramiento y representación legal en Posadas, Misiones. Más de 25 años de experiencia en derecho civil, laboral, penal, familiar y comercial."
+    />
+  </head>
+  <body>
+    <Header />
+    <main>
+      <slot />
+    </main>
+    <Footer />
+  </body>
+</html>

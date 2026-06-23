@@ -1,9 +1,56 @@
 ---
 import { getImage } from 'astro:assets'
 import HomeBg from '../assets/homebg.jpg'
-const bg=await getImage({src:HomeBg,widths:[768,1280,1920],formats:['webp']})
+const bg = await getImage({ src: HomeBg, widths: [768, 1280, 1920], formats: ['webp'] })
 ---
-<section id="inicio" class="hero" style={`--hero-image:url(${bg.src})`}><div class="container hero-content"><p class="eyebrow">Estudio jurídico · Posadas, Misiones</p><h1>Resolviendo tus problemas legales con <em>seriedad y compromiso</em></h1><p class="hero-copy">Brindamos asesoría legal clara, estratégica y personalizada para proteger tus derechos e intereses.</p><div class="hero-actions"><a class="btn btn-primary" href="https://wa.me/5493765051100?text=Hola%2C%20quisiera%20solicitar%20asesor%C3%ADa%20legal" target="_blank" rel="noopener noreferrer">Solicitar asesoría <span aria-hidden="true">→</span></a><a class="btn btn-outline" href="#servicios">Ver servicios</a></div></div><div class="trust-bar" aria-label="Nuestros diferenciales"><div class="container trust-grid"><div><strong>25+</strong><span>Años de experiencia</span></div><div><strong>01</strong><span>Atención personalizada</span></div><div><strong>360°</strong><span>Soluciones legales estratégicas</span></div></div></div></section>
+<section id="inicio" class="hero" style={`--hero-image:url(${bg.src})`}>
+  <div class="container hero-content">
+    <p class="eyebrow">Estudio jurídico · Posadas, Misiones</p>
+    <h1>Resolviendo tus problemas legales con <em>seriedad y compromiso</em></h1>
+    <p class="hero-copy">Brindamos asesoría legal clara, estratégica y personalizada para proteger tus derechos e intereses.</p>
+    <div class="hero-actions">
+      <a class="btn btn-primary" href="https://wa.me/5493765051100?text=Hola%2C%20quisiera%20solicitar%20asesor%C3%ADa%20legal" target="_blank" rel="noopener noreferrer">Solicitar asesoría <span aria-hidden="true">→</span></a>
+      <a class="btn btn-outline" href="#servicios">Ver servicios</a>
+    </div>
+  </div>
+  <div class="trust-bar" aria-label="Nuestros diferenciales">
+    <div class="container trust-grid">
+      <div><strong>25+</strong><span>Años de experiencia</span></div>
+      <div><strong>01</strong><span>Atención personalizada</span></div>
+      <div><strong>360°</strong><span>Soluciones legales estratégicas</span></div>
+    </div>
+  </div>
+</section>
 <style>
-.hero{position:relative;min-height:790px;display:flex;align-items:center;color:#fff;background:linear-gradient(90deg,rgba(4,22,21,.97) 0%,rgba(7,29,28,.88) 42%,rgba(8,25,24,.48) 72%,rgba(8,25,24,.25) 100%),var(--hero-image) center/cover no-repeat}.hero:after{content:"";position:absolute;inset:0;background:linear-gradient(0deg,rgba(4,20,19,.5),transparent 48%);pointer-events:none}.hero-content{position:relative;z-index:1;padding:165px 0 185px}h1{max-width:850px;margin:0;font-size:clamp(3.3rem,7vw,6.35rem);font-weight:600;line-height:.94;letter-spacing:-.042em;text-wrap:balance;text-shadow:0 2px 22px #0003}h1 em{color:#d4aa72;font-weight:inherit}.hero-copy{max-width:620px;margin:2rem 0 0;color:#edf0ed;font-size:clamp(1.05rem,2vw,1.3rem);line-height:1.68}.hero-actions{display:flex;flex-wrap:wrap;gap:.9rem;margin-top:2.4rem}.trust-bar{position:absolute;z-index:2;bottom:0;width:100%;border-top:1px solid #ffffff2b;background:#041a19a3;backdrop-filter:blur(10px)}.trust-grid{display:grid;grid-template-columns:repeat(3,1fr)}.trust-grid>div{display:flex;align-items:center;gap:1.15rem;min-height:112px;padding:1rem 2.4rem;border-right:1px solid #ffffff24}.trust-grid>div:first-child{padding-left:0}.trust-grid>div:last-child{border:0}.trust-grid strong{color:#d4aa72;font:600 2.05rem/1 "Cormorant Garamond",serif}.trust-grid span{max-width:155px;color:#ebeeea;font-size:.82rem;line-height:1.5}@media(max-width:700px){.hero{min-height:800px;background-position:64% center;background-image:linear-gradient(90deg,rgba(4,22,21,.96),rgba(7,29,28,.72)),var(--hero-image)}.hero-content{padding:128px 0 235px}h1{font-size:clamp(2.85rem,13.2vw,4rem);line-height:.96;letter-spacing:-.035em}.hero-copy{margin-top:1.35rem}.hero-actions{margin-top:1.8rem}.hero-actions .btn{flex:1 1 100%}.trust-grid{grid-template-columns:1fr;padding-block:.5rem}.trust-grid>div{min-height:0;padding:.65rem 0;border:0}.trust-grid strong{width:55px;font-size:1.5rem}}
+  .hero{position:relative;min-height:780px;display:flex;align-items:center;color:#fff;background:linear-gradient(90deg,rgba(4,22,21,.98) 0%,rgba(7,29,28,.9) 43%,rgba(8,25,24,.52) 72%,rgba(8,25,24,.28) 100%),var(--hero-image) center/cover no-repeat}
+  .hero:after{content:"";position:absolute;inset:0;background:radial-gradient(circle at 18% 45%,rgba(212,170,114,.1),transparent 34%),linear-gradient(0deg,rgba(4,20,19,.52),transparent 50%);pointer-events:none}
+  .hero-content{position:relative;z-index:1;padding:158px 0 178px}
+  h1{max-width:900px;margin:0;font-size:clamp(3.25rem,6.6vw,6.08rem);font-weight:600;line-height:.98;letter-spacing:-.038em;text-wrap:balance;text-shadow:0 2px 24px #0005}
+  h1 em{color:#d4aa72;font-weight:inherit;font-style:normal;white-space:normal}
+  .hero-copy{max-width:635px;margin:1.85rem 0 0;color:#f0f2ef;font-size:clamp(1.08rem,1.6vw,1.24rem);line-height:1.72;text-shadow:0 1px 12px #0004}
+  .hero-actions{display:flex;flex-wrap:wrap;gap:.95rem;margin-top:2.35rem}
+  .hero-actions .btn{border-radius:8px;padding-inline:1.55rem;box-shadow:inset 0 1px 0 rgba(255,255,255,.16)}
+  .trust-bar{position:absolute;z-index:2;bottom:0;width:100%;border-top:1px solid #ffffff2d;background:#041a19b5;backdrop-filter:blur(12px)}
+  .trust-grid{display:grid;grid-template-columns:repeat(3,1fr)}
+  .trust-grid>div{display:grid;grid-template-columns:auto 1fr;align-items:center;gap:1rem;min-height:108px;padding:1.15rem 2.35rem;border-right:1px solid #ffffff24}
+  .trust-grid>div:first-child{padding-left:0}
+  .trust-grid>div:last-child{border:0;padding-right:0}
+  .trust-grid strong{min-width:64px;color:#d4aa72;font:600 2.1rem/1 "Cormorant Garamond",serif;letter-spacing:-.02em}
+  .trust-grid span{max-width:175px;color:#eef1ed;font-size:.88rem;font-weight:650;line-height:1.45}
+  @media(max-width:800px){
+    .hero{min-height:760px;background-position:62% center;background-image:linear-gradient(90deg,rgba(4,22,21,.97),rgba(7,29,28,.76)),var(--hero-image)}
+    .hero-content{padding:126px 0 214px}
+    h1{font-size:clamp(2.74rem,12.1vw,4.05rem);line-height:1;letter-spacing:-.032em;max-width:680px}
+    .hero-copy{margin-top:1.35rem;font-size:1.04rem;line-height:1.66}
+    .hero-actions{margin-top:1.75rem}
+    .hero-actions .btn{flex:1 1 100%;min-height:54px}
+    .trust-grid{grid-template-columns:1fr;padding-block:.62rem}
+    .trust-grid>div{min-height:0;grid-template-columns:62px 1fr;padding:.72rem 0;border:0}
+    .trust-grid strong{min-width:0;font-size:1.58rem}
+    .trust-grid span{max-width:none;font-size:.86rem}
+  }
+  @media(max-width:390px){
+    h1{font-size:clamp(2.48rem,11.7vw,3.1rem)}
+    .hero-content{padding-top:118px}
+  }
 </style>

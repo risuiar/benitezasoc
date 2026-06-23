@@ -1,8 +1,71 @@
 ---
-const testimonials=[{text:'Desde el primer día me explicaron cada paso con claridad. Sentí que mi caso estaba en manos de profesionales responsables y comprometidos.',name:'Hugo Martínez',case:'Consulta laboral'},{text:'En un momento muy difícil encontré una defensa firme y, sobre todo, un trato humano. El acompañamiento fue constante durante todo el proceso.',name:'Ricardo Vogeli',case:'Defensa penal'},{text:'Se ocuparon de mi reclamo y me mantuvieron informada. Logramos una solución justa con un trabajo serio y transparente.',name:'Roxana Villalba',case:'Daños y perjuicios'}]
+const testimonials = [
+  { text: 'Me explicaron el panorama con claridad y sin promesas exageradas. Durante el proceso siempre supe en qué etapa estaba mi caso.', name: 'Hugo Martínez', case: 'Consulta laboral' },
+  { text: 'Necesitaba una defensa seria y encontré un equipo atento, ordenado y presente. El acompañamiento fue constante.', name: 'Ricardo Vogeli', case: 'Defensa penal' },
+  { text: 'Se ocuparon del reclamo con transparencia y comunicación directa. El resultado fue justo y el trato, muy profesional.', name: 'Roxana Villalba', case: 'Daños y perjuicios' },
+]
 ---
-<section id="testimonios" class="testimonials"><div class="container"><header><p class="eyebrow">Confianza construida</p><h2 class="section-title">Testimonios de clientes</h2><p class="section-copy">La experiencia de quienes ya trabajaron con nosotros.</p></header><div class="quotes">{testimonials.map(item=><figure><span class="quote" aria-hidden="true">“</span><blockquote>{item.text}</blockquote><figcaption><strong>{item.name}</strong><span>{item.case}</span></figcaption></figure>)}</div></div></section>
-<section id="contacto" class="cta"><div class="container cta-inner"><div><p class="eyebrow">Hablemos de tu caso</p><h2>¿Necesitás asesoramiento legal?</h2><p>Contanos tu situación y recibí una orientación inicial clara sobre los próximos pasos.</p></div><div class="cta-actions"><a class="btn btn-primary" href="https://wa.me/5493765051100?text=Hola%2C%20quisiera%20recibir%20orientaci%C3%B3n%20sobre%20mi%20situaci%C3%B3n%20legal" target="_blank" rel="noopener noreferrer">Contactar por WhatsApp <span aria-hidden="true">→</span></a><a class="btn btn-outline" href="mailto:benitezasoc@gmail.com">Enviar email</a></div></div></section>
+<section id="testimonios" class="testimonials">
+  <div class="container">
+    <header>
+      <p class="eyebrow">Confianza construida</p>
+      <h2 class="section-title">Testimonios de clientes</h2>
+      <p class="section-copy">La experiencia de quienes ya trabajaron con nosotros.</p>
+    </header>
+    <div class="quotes">
+      {testimonials.map((item) => (
+        <figure>
+          <span class="quote" aria-hidden="true">“</span>
+          <blockquote>{item.text}</blockquote>
+          <figcaption><strong>{item.name}</strong><span>{item.case}</span></figcaption>
+        </figure>
+      ))}
+    </div>
+  </div>
+</section>
+<section id="contacto" class="cta">
+  <div class="container cta-inner">
+    <div>
+      <p class="eyebrow">Hablemos de tu caso</p>
+      <h2>¿Necesitás asesoramiento legal?</h2>
+      <p>Contanos tu situación y recibí una orientación inicial clara sobre los próximos pasos.</p>
+    </div>
+    <div class="cta-actions">
+      <a class="btn btn-primary" href="https://wa.me/5493765051100?text=Hola%2C%20quisiera%20recibir%20orientaci%C3%B3n%20sobre%20mi%20situaci%C3%B3n%20legal" target="_blank" rel="noopener noreferrer">Contactar por WhatsApp <span aria-hidden="true">→</span></a>
+      <a class="btn btn-outline" href="mailto:benitezasoc@gmail.com">Enviar email</a>
+    </div>
+  </div>
+</section>
 <style>
-.testimonials{padding:clamp(6rem,10vw,9rem) 0;background:#fff}.testimonials header{text-align:center}.testimonials header .eyebrow:before{display:none}.testimonials .section-copy{margin:1.2rem 0 0}.quotes{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;margin-top:3.8rem;align-items:stretch}.quotes figure{position:relative;margin:0;padding:2.4rem 2.2rem 2.1rem;border:1px solid #e4e0d8;border-radius:14px 14px 14px 4px;background:#faf9f6;box-shadow:0 4px 16px rgba(26,46,42,.025)}.quote{position:absolute;right:1.8rem;top:1.45rem;color:#d7c09f;font:600 4.2rem/.7 "Cormorant Garamond",serif;opacity:.65}.quotes blockquote{min-height:135px;margin:.8rem 0 2.2rem;color:#3e4846;font:600 1.3rem/1.5 "Cormorant Garamond",serif}.quotes figcaption{padding-top:1.15rem;border-top:1px solid #e2ded6}.quotes strong,.quotes figcaption span{display:block}.quotes strong{font-size:.83rem}.quotes figcaption span{margin-top:.3rem;color:#8a908e;font-size:.72rem}.cta{padding:clamp(5rem,9vw,7.5rem) 0;color:#fff;background:linear-gradient(110deg,#0b2928,#164845)}.cta-inner{display:flex;align-items:center;justify-content:space-between;gap:clamp(3rem,7vw,6rem)}.cta h2{margin:0;font-size:clamp(2.7rem,5vw,4.5rem);line-height:1;text-wrap:balance}.cta p:not(.eyebrow){max-width:610px;margin:1.25rem 0 0;color:#d2dbd8;line-height:1.75}.cta-actions{display:flex;flex:0 0 auto;flex-wrap:wrap;gap:.9rem}@media(max-width:850px){.quotes{grid-template-columns:1fr}.quotes blockquote{min-height:0}.cta-inner{display:block}.cta-actions{margin-top:2.2rem}.cta-actions .btn{flex:1 1 200px}}
+  .testimonials{padding:clamp(6.4rem,10vw,9.2rem) 0;background:#fff}
+  .testimonials header{text-align:center}
+  .testimonials header .eyebrow:before{display:none}
+  .testimonials .section-copy{margin:1.15rem 0 0}
+  .quotes{display:grid;grid-template-columns:repeat(3,1fr);gap:1.45rem;margin-top:3.7rem;align-items:stretch}
+  .quotes figure{position:relative;margin:0;padding:2.35rem 2.15rem 2rem;border:1px solid #e4e0d8;border-radius:15px 15px 15px 5px;background:linear-gradient(180deg,#faf9f6,#fff);box-shadow:0 4px 16px rgba(26,46,42,.024)}
+  .quote{position:absolute;right:1.75rem;top:1.35rem;color:#d7c09f;font:600 3.75rem/.7 "Cormorant Garamond",serif;opacity:.52}
+  .quotes blockquote{min-height:132px;margin:.65rem 0 2rem;color:#384341;font:600 1.25rem/1.52 "Cormorant Garamond",serif}
+  .quotes figcaption{padding-top:1.12rem;border-top:1px solid #e2ded6}
+  .quotes strong,.quotes figcaption span{display:block}
+  .quotes strong{font-size:.86rem}
+  .quotes figcaption span{margin-top:.32rem;color:#828b88;font-size:.74rem}
+  .cta{padding:clamp(5.2rem,9vw,7.7rem) 0;color:#fff;background:linear-gradient(110deg,#0b2928,#164845)}
+  .cta-inner{display:flex;align-items:center;justify-content:space-between;gap:clamp(3rem,7vw,6rem)}
+  .cta h2{margin:0;font-size:clamp(2.65rem,5vw,4.35rem);line-height:1.02;text-wrap:balance}
+  .cta p:not(.eyebrow){max-width:610px;margin:1.2rem 0 0;color:#d8e0dd;font-size:1.02rem;line-height:1.75}
+  .cta-actions{display:flex;flex:0 0 auto;flex-wrap:wrap;gap:.9rem}
+  .cta-actions .btn{border-radius:8px}
+  @media(max-width:900px){
+    .quotes{grid-template-columns:1fr;gap:1.1rem}
+    .quotes blockquote{min-height:0}
+    .cta-inner{display:block}
+    .cta-actions{margin-top:2.15rem}
+    .cta-actions .btn{flex:1 1 200px}
+  }
+  @media(max-width:560px){
+    .testimonials{padding-block:5.6rem}
+    .quotes{margin-top:2.6rem}
+    .quotes figure{padding:2.05rem 1.65rem 1.75rem}
+    .cta-actions .btn{flex:1 1 100%;min-height:54px}
+  }
 </style>
