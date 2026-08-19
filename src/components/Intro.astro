@@ -6,8 +6,8 @@ const bg = await getImage({ src: HomeBg, widths: [768, 1280, 1920], formats: ['w
 <section id="inicio" class="hero" style={`--hero-image:url(${bg.src})`}>
   <div class="container hero-content">
     <p class="eyebrow">Estudio jurídico · Posadas, Misiones</p>
-    <h1>Resolviendo tus problemas legales con <em>seriedad y compromiso</em></h1>
-    <p class="hero-copy">Brindamos asesoría legal clara, estratégica y personalizada para proteger tus derechos e intereses.</p>
+    <h1>Protegemos tus derechos con <em>estrategia y compromiso</em></h1>
+    <p class="hero-copy">Asesoramiento jurídico claro, representación sólida y atención personalizada para cada decisión importante.</p>
     <div class="hero-actions">
       <a class="btn btn-primary" href="https://wa.me/5493765051100?text=Hola%2C%20quisiera%20solicitar%20asesor%C3%ADa%20legal" target="_blank" rel="noopener noreferrer">Solicitar asesoría <span aria-hidden="true">→</span></a>
       <a class="btn btn-outline" href="#servicios">Ver servicios</a>
@@ -16,14 +16,14 @@ const bg = await getImage({ src: HomeBg, widths: [768, 1280, 1920], formats: ['w
   <div class="trust-bar" aria-label="Nuestros diferenciales">
     <div class="container trust-grid">
       <div><strong>25+</strong><span>Años de experiencia</span></div>
-      <div><strong>01</strong><span>Atención personalizada</span></div>
+      <div><strong>1:1</strong><span>Atención personalizada</span></div>
       <div><strong>360°</strong><span>Soluciones legales estratégicas</span></div>
     </div>
   </div>
 </section>
 <style>
   .hero{position:relative;min-height:780px;display:flex;align-items:center;color:#fff;background:linear-gradient(90deg,rgba(4,22,21,.98) 0%,rgba(7,29,28,.9) 43%,rgba(8,25,24,.52) 72%,rgba(8,25,24,.28) 100%),var(--hero-image) center/cover no-repeat}
-  .hero:after{content:"";position:absolute;inset:0;background:radial-gradient(circle at 18% 45%,rgba(212,170,114,.1),transparent 34%),linear-gradient(0deg,rgba(4,20,19,.52),transparent 50%);pointer-events:none}
+  .hero:after{content:"";position:absolute;inset:0;background:radial-gradient(circle at 18% 45%,rgba(212,170,114,.12),transparent 34%),linear-gradient(0deg,rgba(4,20,19,.52),transparent 50%);pointer-events:none}
   .hero-content{position:relative;z-index:1;padding:158px 0 178px}
   h1{max-width:900px;margin:0;font-size:clamp(3.25rem,6.6vw,6.08rem);font-weight:600;line-height:.98;letter-spacing:-.038em;text-wrap:balance;text-shadow:0 2px 24px #0005}
   h1 em{color:#d4aa72;font-weight:inherit;font-style:normal;white-space:normal}
@@ -37,6 +37,11 @@ const bg = await getImage({ src: HomeBg, widths: [768, 1280, 1920], formats: ['w
   .trust-grid>div:last-child{border:0;padding-right:0}
   .trust-grid strong{min-width:64px;color:#d4aa72;font:600 2.1rem/1 "Cormorant Garamond",serif;letter-spacing:-.02em}
   .trust-grid span{max-width:175px;color:#eef1ed;font-size:.88rem;font-weight:650;line-height:1.45}
+  @media(prefers-reduced-motion:no-preference){
+    .hero-content>*{animation:hero-enter .7s both cubic-bezier(.22,.8,.28,1)}
+    .hero-content>h1{animation-delay:.08s}.hero-copy{animation-delay:.15s}.hero-actions{animation-delay:.22s}
+    @keyframes hero-enter{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:none}}
+  }
   @media(max-width:800px){
     .hero{min-height:760px;background-position:62% center;background-image:linear-gradient(90deg,rgba(4,22,21,.97),rgba(7,29,28,.76)),var(--hero-image)}
     .hero-content{padding:126px 0 214px}

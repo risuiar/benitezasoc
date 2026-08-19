@@ -25,14 +25,19 @@ A modern website for **Benitez y Asociados**, built using Astro and Tailwind CSS
 └── tsconfig.json # Typescript configuration
 ```
 
-## 📦 Installation
+## 📦 Requisitos
+
+- Node.js 22.19 o posterior
+- npm 9.6.5 o posterior
+
+## 📦 Instalación
 
 Clone the repository and install dependencies:
 
 ```bash
 git clone https://github.com/your-username/benitez-y-asociados.git
 cd benitez-y-asociados
-npm install
+npm ci
 ```
 
 ## 🔧 Development
@@ -49,11 +54,14 @@ Open [http://localhost:4321](http://localhost:4321) (or the port displayed in th
 
 The site is hosted at: [https://benitezyasoc.mateando.com/](https://benitezyasoc.mateando.com/)
 
-To deploy, use the following command:
+Genera la versión lista para publicar con:
 
 ```bash
-npm run build && npm run deploy
+npm run build
 ```
+
+Los archivos estáticos resultantes quedan en `dist/`. Para generar las URLs
+canónicas y los metadatos absolutos, define `SITE_URL` en el entorno de build.
 
 ## 🛠️ Building for Production
 

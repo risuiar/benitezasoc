@@ -2,13 +2,67 @@
 import '../styles/global.css'
 import Header from '../components/Header.astro'
 import Footer from '../components/Footer.astro'
+
+type Props = {
+  title?: string
+  description?: string
+  canonicalPath?: string
+  image?: string
+}
+
+const {
+  title = 'Adrián Benítez & Asociados | Estudio jurídico en Posadas, Misiones',
+  description = 'Asesoramiento y representación legal en Posadas, Misiones. Más de 25 años de experiencia en derecho civil, laboral, penal, familia, daños y derecho comercial.',
+  canonicalPath = '/',
+  image = '/images/og-benitez-asociados.jpg',
+} = Astro.props
+
+const site = Astro.site?.toString().replace(/\/$/, '')
+const canonicalUrl = site ? new URL(canonicalPath, site).toString() : canonicalPath
+const imageUrl = site ? new URL(image, site).toString() : image
+const businessSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'LegalService',
+  name: 'Adrián Benítez & Asociados',
+  description,
+  image: imageUrl,
+  telephone: '+54 9 376 505-1100',
+  email: 'benitezasoc@gmail.com',
+  address: {
+    '@type': 'PostalAddress',
+    streetAddress: 'Salta 2278, 1.º A',
+    addressLocality: 'Posadas',
+    addressRegion: 'Misiones',
+    addressCountry: 'AR',
+  },
+  areaServed: ['Posadas', 'Misiones', 'Argentina'],
+  openingHoursSpecification: [
+    {
+      '@type': 'OpeningHoursSpecification',
+      dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'],
+      opens: '07:30',
+      closes: '12:30',
+    },
+    {
+      '@type': 'OpeningHoursSpecification',
+      dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'],
+      opens: '17:00',
+      closes: '20:00',
+    },
+  ],
+  sameAs: ['https://www.instagram.com/benitezyasoc/'],
+  ...(site ? { url: site, '@id': `${site}/#legalservice` } : {}),
+}
 ---
 <!doctype html>
-<html lang="es">
+<html lang="es-AR">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="theme-color" content="#123c3b" />
+    <meta name="robots" content="index, follow, max-image-preview:large" />
+    <meta name="author" content="Adrián Benítez & Asociados" />
+    <meta name="format-detection" content="telephone=yes, address=yes, email=yes" />
     <link
       rel="preload"
       href="/fonts/cormorant-garamond-latin-600-normal.woff2"
@@ -16,18 +70,37 @@ import Footer from '../components/Footer.astro'
       type="font/woff2"
       crossorigin
     />
+    {site && <link rel="canonical" href={canonicalUrl} />}
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <link rel="alternate icon" href="/favicon.ico" />
-    <meta name="generator" content={Astro.generator} />
-    <title>Adrián Benítez & Asociados | Estudio jurídico</title>
+    <title>{title}</title>
+    <meta name="description" content={description} />
     <meta
-      name="description"
-      content="Asesoramiento y representación legal en Posadas, Misiones. Más de 25 años de experiencia en derecho civil, laboral, penal, familiar y comercial."
+      name="keywords"
+      content="estudio jurídico Posadas, abogados Posadas, abogado Misiones, derecho civil, derecho laboral, derecho penal, derecho de familia, daños y perjuicios, asesoramiento legal"
     />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="es_AR" />
+    <meta property="og:site_name" content="Adrián Benítez & Asociados" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content={imageUrl} />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    {site && <meta property="og:url" content={canonicalUrl} />}
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={imageUrl} />
+
+    <script type="application/ld+json" set:html={JSON.stringify(businessSchema)} />
   </head>
   <body>
+    <a class="skip-link" href="#contenido">Saltar al contenido</a>
     <Header />
-    <main>
+    <main id="contenido">
       <slot />
     </main>
     <Footer />

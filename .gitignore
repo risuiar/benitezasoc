@@ -25,3 +25,6 @@ pnpm-debug.log*
 
 # unrelated local project
 backend-sanplast/
+
+# local development tools and models
+.tools/

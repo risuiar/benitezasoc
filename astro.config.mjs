@@ -5,13 +5,8 @@ import tailwindcss from '@tailwindcss/vite'
 
 // https://astro.build/config
 export default defineConfig({
+  site: process.env.SITE_URL,
   vite: {
     plugins: [tailwindcss()]
-  },
-  image: {
-    experimentalLayout: 'responsive'
-  },
-  experimental: {
-    responsiveImages: true
   }
 })

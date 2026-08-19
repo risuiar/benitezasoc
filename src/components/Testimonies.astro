@@ -49,8 +49,9 @@ const testimonials = [
   .quotes strong,.quotes figcaption span{display:block}
   .quotes strong{font-size:.86rem}
   .quotes figcaption span{margin-top:.32rem;color:#828b88;font-size:.74rem}
-  .cta{padding:clamp(5.2rem,9vw,7.7rem) 0;color:#fff;background:linear-gradient(110deg,#0b2928,#164845)}
-  .cta-inner{display:flex;align-items:center;justify-content:space-between;gap:clamp(3rem,7vw,6rem)}
+  .cta{position:relative;overflow:hidden;padding:clamp(5.2rem,9vw,7.7rem) 0;color:#fff;background:radial-gradient(circle at 92% 18%,rgba(212,170,114,.13),transparent 30%),linear-gradient(110deg,#0b2928,#164845)}
+  .cta:after{content:"";position:absolute;right:-95px;top:-160px;width:340px;height:340px;border:1px solid #d4aa7230;border-radius:50%;pointer-events:none}
+  .cta-inner{position:relative;z-index:1;display:flex;align-items:center;justify-content:space-between;gap:clamp(3rem,7vw,6rem)}
   .cta h2{margin:0;font-size:clamp(2.65rem,5vw,4.35rem);line-height:1.02;text-wrap:balance}
   .cta p:not(.eyebrow){max-width:610px;margin:1.2rem 0 0;color:#d8e0dd;font-size:1.02rem;line-height:1.75}
   .cta-actions{display:flex;flex:0 0 auto;flex-wrap:wrap;gap:.9rem}

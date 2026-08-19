@@ -13,13 +13,18 @@
       <a href="#equipo">Equipo</a>
       <a href="#testimonios">Testimonios</a>
       <a href="#contacto">Contacto</a>
-      <a class="header-cta" href="https://wa.me/5493765051100?text=Hola%2C%20quisiera%20realizar%20una%20consulta%20legal" target="_blank" rel="noopener noreferrer">Consulta por WhatsApp</a>
+      <a class="header-cta" href="https://wa.me/5493765051100?text=Hola%2C%20quisiera%20realizar%20una%20consulta%20legal" target="_blank" rel="noopener noreferrer">Solicitar consulta</a>
     </nav>
   </div>
 </header>
 <script>
   const b = document.querySelector<HTMLButtonElement>('.menu-toggle')
   const n = document.querySelector<HTMLElement>('#main-nav')
+  const h = document.querySelector<HTMLElement>('.site-header')
+  const links = [...document.querySelectorAll<HTMLAnchorElement>('.main-nav a[href^="#"]')]
+  const sections = links
+    .map((link) => document.querySelector<HTMLElement>(link.hash))
+    .filter((section): section is HTMLElement => Boolean(section))
   const close = () => {
     b?.setAttribute('aria-expanded', 'false')
     b?.setAttribute('aria-label', 'Abrir menú')
@@ -32,27 +37,65 @@
     n?.classList.toggle('is-open', !o)
   })
   n?.querySelectorAll('a').forEach((a) => a.addEventListener('click', close))
+
+  const setActive = (id: string) => {
+    links.forEach((link) => {
+      const active = link.hash === `#${id}`
+      link.classList.toggle('is-active', active)
+      if (active) link.setAttribute('aria-current', 'location')
+      else link.removeAttribute('aria-current')
+    })
+  }
+
+  const syncNavigation = () => {
+    const marker = window.scrollY + Math.min(window.innerHeight * .38, 320)
+    let current = sections[0]
+    for (const section of sections) {
+      if (section.offsetTop <= marker) current = section
+    }
+    if (window.scrollY <= 24) current = sections.find((section) => section.id === 'inicio') ?? current
+    if (current) setActive(current.id)
+  }
+
+  let navigationFrame = 0
+  const scheduleSync = () => {
+    if (navigationFrame) return
+    navigationFrame = window.requestAnimationFrame(() => {
+      h?.classList.toggle('is-scrolled', window.scrollY > 24)
+      syncNavigation()
+      navigationFrame = 0
+    })
+  }
+
+  links.forEach((link) => link.addEventListener('click', () => setActive(link.hash.slice(1))))
+  scheduleSync()
+  window.addEventListener('scroll', scheduleSync, { passive: true })
+  window.addEventListener('resize', scheduleSync)
+  window.addEventListener('hashchange', scheduleSync)
 </script>
 <style>
-  .site-header{position:absolute;z-index:20;top:0;left:0;width:100%;color:#fff;border-bottom:1px solid #ffffff30;background:linear-gradient(180deg,rgba(5,22,21,.56),rgba(5,22,21,.12))}
-  .header-inner{min-height:92px;display:flex;align-items:center;justify-content:space-between;gap:2rem}
+  .site-header{position:fixed;z-index:20;top:0;left:0;width:100%;color:#fff;border-bottom:1px solid #ffffff30;background:linear-gradient(180deg,rgba(5,22,21,.64),rgba(5,22,21,.14));transition:background .28s ease,border-color .28s ease,box-shadow .28s ease,backdrop-filter .28s ease}
+  .site-header.is-scrolled{border-color:#ffffff1f;background:#082321ed;box-shadow:0 10px 30px rgba(0,0,0,.16);backdrop-filter:blur(14px)}
+  .header-inner{min-height:92px;display:flex;align-items:center;justify-content:space-between;gap:2rem;transition:min-height .28s ease}
+  .site-header.is-scrolled .header-inner{min-height:74px}
   .brand{display:inline-flex;align-items:center;gap:.9rem;line-height:1;text-shadow:0 1px 14px rgba(0,0,0,.22)}
   .brand-mark{width:46px;height:46px;display:grid;place-items:center;border:1px solid #d1ad79;border-radius:7px;color:#d9b27d;background:#071d1c57;font:600 1.22rem "Cormorant Garamond",serif}
   .brand-name{font:600 1.34rem "Cormorant Garamond",serif;letter-spacing:-.01em}
   .brand-name small{display:block;margin-top:.28rem;color:#e6cfad;font:700 .68rem/1 sans-serif;letter-spacing:.18em;text-transform:uppercase}
   .main-nav{display:flex;align-items:center;gap:1.55rem;font-size:.88rem;font-weight:700}
   .main-nav>a:not(.header-cta){padding-block:.75rem;border-bottom:1px solid transparent;color:#f7f5efcc;transition:color .2s ease,border-color .2s ease}
-  .main-nav>a:not(.header-cta):hover{color:#fff;border-color:#d4aa72}
+  .main-nav>a:not(.header-cta):hover,.main-nav>a.is-active{color:#fff;border-color:#d4aa72}
   .header-cta{padding:.86rem 1.16rem;border:1px solid #ffffff7d;border-radius:8px;background:#ffffff10;color:#fff;box-shadow:inset 0 1px 0 #ffffff1f;transition:background .25s ease,border-color .25s ease,color .25s ease}
   .header-cta:hover{background:#f6f4ef;color:#123c3b;border-color:#f6f4ef}
   .menu-toggle{display:none;width:46px;height:46px;border:1px solid #ffffff80;border-radius:8px;background:#ffffff0d;padding:12px}
   .menu-toggle span{display:block;height:1px;margin:5px 0;background:#fff}
   @media(max-width:980px){
     .header-inner{min-height:78px}
+    .site-header.is-scrolled .header-inner{min-height:70px}
     .brand-mark{width:42px;height:42px}
     .brand-name{font-size:1.22rem}
     .menu-toggle{display:block}
-    .main-nav{position:absolute;top:78px;left:14px;width:calc(100% - 28px);display:none;align-items:stretch;gap:0;padding:.75rem 18px 1.25rem;background:#0b2928f5;border:1px solid #ffffff24;border-radius:0 0 14px 14px;box-shadow:0 18px 35px #0004;backdrop-filter:blur(10px)}
+    .main-nav{position:absolute;top:100%;left:14px;width:calc(100% - 28px);display:none;align-items:stretch;gap:0;padding:.75rem 18px 1.25rem;background:#0b2928f5;border:1px solid #ffffff24;border-radius:0 0 14px 14px;box-shadow:0 18px 35px #0004;backdrop-filter:blur(10px)}
     .main-nav.is-open{display:grid}
     .main-nav a{min-height:46px;display:flex;align-items:center;padding:.82rem .2rem;color:#fff}
     .header-cta{justify-content:center;margin-top:.45rem;text-align:center}
