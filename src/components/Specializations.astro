@@ -24,7 +24,7 @@ const areas = [
           <svg aria-hidden="true" viewBox="0 0 24 24"><path d="M12 3v18M5 7h14M7 7l-4 7h8L7 7Zm10 0-4 7h8l-4-7ZM8 21h8"/></svg>
           <h3>{title}</h3>
           <p>{text}</p>
-          <a href="#contacto" aria-label={`Consultar por ${title}`}>Consultar <span aria-hidden="true">↗</span></a>
+          <a href="#contacto" aria-label={`Consultar por ${title}`} data-umami-event={`Click Consultar especialidad - ${title}`}>Consultar <span aria-hidden="true">↗</span></a>
         </article>
       ))}
     </div>

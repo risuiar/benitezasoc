@@ -27,7 +27,7 @@ const team = [
             <p class="role">{member.role}</p>
             <h3>{member.name}</h3>
             <p class="bio">{member.text}</p>
-            <a href={`https://wa.me/549${member.phone}?text=Hola%2C%20quisiera%20realizar%20una%20consulta`} target="_blank" rel="noopener noreferrer" aria-label={`Contactar a ${member.name} por WhatsApp`}>WhatsApp <span aria-hidden="true">↗</span></a>
+            <a href={`https://wa.me/549${member.phone}?text=Hola%2C%20quisiera%20realizar%20una%20consulta`} target="_blank" rel="noopener noreferrer" aria-label={`Contactar a ${member.name} por WhatsApp`} data-umami-event={`Click WhatsApp equipo - ${member.name}`}>WhatsApp <span aria-hidden="true">↗</span></a>
           </div>
         </article>
       ))}
