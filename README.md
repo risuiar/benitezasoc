@@ -52,7 +52,7 @@ Open [http://localhost:4321](http://localhost:4321) (or the port displayed in th
 
 ## 🚀 Deployment
 
-The site is hosted at: [https://benitezyasoc.mateando.com/](https://benitezyasoc.mateando.com/)
+El sitio se aloja en: [https://benitezyasoc.com.ar/](https://benitezyasoc.com.ar/)
 
 Genera la versión lista para publicar con:
 
@@ -60,8 +60,9 @@ Genera la versión lista para publicar con:
 npm run build
 ```
 
-Los archivos estáticos resultantes quedan en `dist/`. Para generar las URLs
-canónicas y los metadatos absolutos, define `SITE_URL` en el entorno de build.
+Los archivos estáticos resultantes quedan en `dist/`. El dominio de producción
+predeterminado es `https://benitezyasoc.com.ar`; puedes sobrescribirlo con
+`SITE_URL` en el entorno de build cuando sea necesario.
 
 ## 🛠️ Building for Production
 
