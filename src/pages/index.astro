@@ -1,12 +1,17 @@
 ---
 import Home from '../components/Home.astro';
 import Layout from '../layouts/Layout.astro';
+import { getImage } from 'astro:assets';
+import HomeBg from '../assets/homebg.jpg';
+
+const heroImage = await getImage({ src: HomeBg, width: 1920, format: 'webp' });
 ---
 
 <Layout
 	title="Abogados en Posadas | Adrián Benítez & Asociados"
 	description="Estudio jurídico en Posadas, Misiones. Asesoramiento legal y representación en derecho civil, laboral, penal, familia, daños y derecho comercial."
 	canonicalPath="/"
+	preloadImage={heroImage.src}
 >
 	<Home />
 </Layout>

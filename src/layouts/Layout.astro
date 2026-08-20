@@ -8,6 +8,7 @@ type Props = {
   description?: string
   canonicalPath?: string
   image?: string
+  preloadImage?: string
 }
 
 const {
@@ -15,6 +16,7 @@ const {
   description = 'Asesoramiento y representación legal en Posadas, Misiones. Más de 25 años de experiencia en derecho civil, laboral, penal, familia, daños y derecho comercial.',
   canonicalPath = '/',
   image = '/images/og-benitez-asociados.jpg',
+  preloadImage,
 } = Astro.props
 
 const site = Astro.site?.toString().replace(/\/$/, '')
@@ -70,6 +72,7 @@ const businessSchema = {
       type="font/woff2"
       crossorigin
     />
+    {preloadImage && <link rel="preload" as="image" href={preloadImage} fetchpriority="high" />}
     {site && <link rel="canonical" href={canonicalUrl} />}
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <link rel="alternate icon" href="/favicon.ico" />
